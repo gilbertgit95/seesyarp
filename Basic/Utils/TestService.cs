@@ -47,7 +47,7 @@ namespace Utils
             int strIndex = stringData.IndexOf("Data");
             string modifiedStrData = stringData.Insert(strIndex, "insert ");
             string joinedStr = string.Join("",new String[]{ modifiedStrData, ": joined", "list of string"});
-            string replaceStr = joinedStr.Replace(":", ">---->");
+            string replaceStr = joinedStr.Replace(":", "#");
             string removedStr = replaceStr.Remove(0, 4);
 
             Console.WriteLine(removedStr);
@@ -58,6 +58,17 @@ namespace Utils
         public static void Dates()
         {
             Console.WriteLine("-------> Dates");
+            string format = "yyyy-MM-dd";
+            DateTime date = DateTime.UtcNow;
+            DateTime dateHereNow = DateTime.Now;
+            DateTime costumDate = new DateTime(1995, 4, 27, 7, 30, 21);
+            DateTime advanceDate = costumDate.AddDays(10);
+
+            TimeZoneInfo timezone = TimeZoneInfo.Local;
+            
+
+            Console.WriteLine($"datetime here { dateHereNow } and for utc now { TimeZoneInfo.ConvertTimeToUtc(dateHereNow, timezone) },\n advance birthday{ advanceDate.ToString(format) }");
+
         }
 
         // lists
