@@ -75,9 +75,64 @@ namespace Utils
         public static void Lists()
         {
             Console.WriteLine("-------> Lists");
+            List<string> listahan = new List<string>() {"Gilbert"};
+            listahan.Add("Cuerbo");
+            listahan.Add("Defante");
+            listahan.Add("IT");
+
+            // loop process
+            listahan.ForEach((item) => {
+                Console.WriteLine($"- { item }");
+            });
+
+            // filter process
+            List<string> filtered = (List<string>) listahan.Where((item) => {
+                return item != "IT";
+            }).ToList();
+
+            // map process
+            List<bool> mapData = (List<bool>) listahan.Select((item) => {
+                return item.IndexOf("Cuerbo") < 0? true: false;
+            }).ToList();
+
+            // reduce process
+            String reduceData = listahan.Aggregate(
+                seed: "",
+                func: (item, acc) => {
+                    if (item.Length > 0) { 
+                        acc = $"{acc}+{item}";
+                    }
+                    return acc;
+                }
+            );
+
+            // chained proceess
+            string transformedData = listahan
+                .Where((item) =>
+                {
+                    return item != "IT";
+                })
+                .Select((item) =>
+                {
+                    return $"* { item }";
+                })
+                .Aggregate(
+                    seed: "",
+                    func: (item, acc) => {
+                        if (item.Length > 0)
+                        {
+                            acc = $"{acc}+{item}";
+                        }
+                        return acc;
+                    }
+                );
+
+
+            //Console.WriteLine(String.Join(",", filtered));
+            Console.WriteLine(transformedData);
         }
 
-
+      
         // dictionaries
         public static void Dictionaries()
         {
