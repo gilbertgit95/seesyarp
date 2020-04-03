@@ -137,6 +137,17 @@ namespace Utils
         public static void Dictionaries()
         {
             Console.WriteLine("-------> Dictionaries");
+
+            Dictionary<string, string> dictionaryData = new Dictionary<string, string>();
+            dictionaryData.Add("firstName", "gilbert");
+            dictionaryData.Add("middlename", "Defante");
+            dictionaryData.Add("lastName", "cuerbo");
+            dictionaryData.Add("gender", "male");
+            dictionaryData.Remove("gender");
+
+            foreach (KeyValuePair<string, string> me in dictionaryData) {
+                Console.WriteLine($"{ me.Key }:{ me.Value }");
+            }
         }
 
 
