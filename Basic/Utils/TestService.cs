@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 
 namespace Utils
@@ -78,6 +79,7 @@ namespace Utils
             string name = "gilbert D. Cuerbo";
             string switchData = "a";
 
+            // if else
             if ((name.IndexOf("gilbert") > -1) ? true : false)
             {
                 Console.WriteLine("name is Gilbert");
@@ -91,6 +93,7 @@ namespace Utils
                 Console.WriteLine("Default Log");
             }
 
+            // switch
             switch(switchData)
             {
                 case "a":
@@ -112,6 +115,31 @@ namespace Utils
         public static void Loops()
         {
             Console.WriteLine("-------> Loops");
+            // while
+            int count = 0;
+            int total = 0;
+            while (count > 11)
+            {
+                count++;
+                total++;
+            }
+
+            // do while
+            count = 0;
+            do
+            {
+                count++;
+                total++;
+            }
+            while (count < 10);
+
+            // for
+            for (int i = 0; i < 10; i++)
+            {
+                total++;
+            }
+
+            Console.WriteLine($"Loop total: { total }");
         }
 
         // lists
