@@ -16,7 +16,13 @@ namespace Basic
 
             // date
             TestService.Dates();
-                
+
+            // conditional statement
+            TestService.ConditionalStatements();
+
+            // loops
+            TestService.Loops();
+
 
             // list
             TestService.Lists();
@@ -25,17 +31,12 @@ namespace Basic
             // dictionaries
             TestService.Dictionaries();
 
+            // tuples
+            TestService.Tuples();
+
 
             // json
             TestService.Json();
-
-
-            // conditional statement
-            TestService.ConditionalStatements();
-
-
-            // loops
-            TestService.Loops();
 
 
             // linq

@@ -71,6 +71,49 @@ namespace Utils
 
         }
 
+        // conditional statement
+        public static void ConditionalStatements()
+        {
+            Console.WriteLine("-------> ConditionalStatements");
+            string name = "gilbert D. Cuerbo";
+            string switchData = "a";
+
+            if ((name.IndexOf("gilbert") > -1) ? true : false)
+            {
+                Console.WriteLine("name is Gilbert");
+            }
+            else if (name.Length == 0)
+            {
+                Console.WriteLine("String Size is zero");
+            }
+            else
+            {
+                Console.WriteLine("Default Log");
+            }
+
+            switch(switchData)
+            {
+                case "a":
+                    Console.WriteLine("a process");
+                    break;
+                case "b":
+                    Console.WriteLine("b process");
+                    break;
+                case "c":
+                    Console.WriteLine("c process");
+                    break;
+                default:
+                    Console.WriteLine("default process");
+                    break;
+            }
+        }
+ 
+        // loops
+        public static void Loops()
+        {
+            Console.WriteLine("-------> Loops");
+        }
+
         // lists
         public static void Lists()
         {
@@ -150,24 +193,17 @@ namespace Utils
             }
         }
 
+        // tuples
+        public static void Tuples()
+        {
+
+        }
+
 
         // json
         public static void Json()
         {
             Console.WriteLine("-------> Json");
-        }
-
-
-        // conditional statement
-        public static void ConditionalStatements()
-        {
-            Console.WriteLine("-------> ConditionalStatements");
-        }
-
-        // loops
-        public static void Loops()
-        {
-            Console.WriteLine("-------> Loops");
         }
 
 
