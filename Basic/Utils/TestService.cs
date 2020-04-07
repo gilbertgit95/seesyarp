@@ -224,7 +224,14 @@ namespace Utils
         // tuples
         public static void Tuples()
         {
+            Console.WriteLine("-------> Tuples");
 
+            Tuple<string, int, int, bool> collections = new Tuple<string, int, int, bool>("one", 2, 3, true);
+            collections = Tuple.Create("wan", 4, 5, true);
+
+            var coll = Tuple.Create(1,2,3,4,5,6,7,8);
+
+            Console.WriteLine($"first is: { coll.Item1 } and the last is: { coll.Rest.Item1 }");
         }
 
 
