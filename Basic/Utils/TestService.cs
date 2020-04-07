@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 
@@ -239,6 +240,15 @@ namespace Utils
         public static void Json()
         {
             Console.WriteLine("-------> Json");
+            string data = @"{
+                'Name': 'gebe',
+                'Hobbies': []
+            }";
+            TestData parseData = JsonConvert.DeserializeObject<TestData>(data);
+            parseData.Hobbies.Add("Drawing");
+            parseData.Hobbies.Add("Programming");
+
+            Console.WriteLine($"{ parseData.Name }'s Hobbies are: { String.Join(",", parseData.Hobbies) }\n #{ JsonConvert.SerializeObject(parseData) }");
         }
 
 
@@ -255,4 +265,20 @@ namespace Utils
             Console.WriteLine("-------> UsingLibrary");
         }
     }
+
+    // test class
+    class TestData
+    {
+        public string Name
+        {
+            get;
+            set;
+        }
+
+        public List<string> Hobbies
+        {
+            get;
+            set;
+        }
+    };
 }
