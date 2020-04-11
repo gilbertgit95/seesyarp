@@ -256,6 +256,32 @@ namespace Utils
         public static void LingQ()
         {
             Console.WriteLine("-------> LingQ");
+            List<TestData> listDta = new List<TestData>() {
+                new TestData() { Name = "gilbert", Hobbies = new List<string>() { "Drawing", "Progrmming", "BJJ"} },
+                new TestData() { Name = "harold", Hobbies = new List<string>() { "Farming", "Mining", "Smoking"} },
+                new TestData() { Name = "felix", Hobbies = new List<string>() { "diving", "spying", "jogging"} },
+                new TestData() { Name = "elbon", Hobbies = new List<string>() { "reading", "chemicals", "history"} },
+                new TestData() { Name = "dina", Hobbies = new List<string>() { "korean", "novel"} },
+                new TestData() { Name = "Ian charlse", Hobbies = new List<string>() { "Invention", "playing", "cartoons"} }
+            };
+
+            // get pepole who loves drwing
+            // query syntax
+            List<TestData> artist = (
+                from data in listDta
+                where data.Name.Contains("gilbert")
+                select data
+            ).ToList();
+            Console.WriteLine("artist: " + JsonConvert.SerializeObject(artist));
+
+            // method syntax
+            List<TestData> miner = listDta.Where(item => {
+                return item.Name == "harold";
+            }).ToList();
+
+            Console.WriteLine("miner: " + JsonConvert.SerializeObject(miner));
+
+
         }
 
 
